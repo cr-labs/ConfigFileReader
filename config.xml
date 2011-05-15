@@ -1,0 +1,59 @@
+<!-- test file for ConfigFileReader's .get??? methods -->
+
+<data>
+<section1>
+	<element1a>1a</element1a>
+	<element1b>1b</element1b>
+	<element1c>1c</element1c>
+	<element1d>99</element1d>
+</section1>
+
+
+<section2>
+	<element2a>2a</element2a>
+	<element2b>2b</element2b>
+	<element2c>2c</element2c>
+</section2>
+
+
+<section3>
+	<client id="one" extraattribte="extry">1</client>
+	<client id="two">22</client>
+	<client id="three">333</client>
+	<!-- the next one has no "id" attribute and will be skipped or throw an exception -->
+	<client>4444</client>
+</section3>
+
+
+<!-- section 3b tests the ConfigFileReader.getMap(elementName) method that fetches all attributes and uses the element value as the key -->
+<section3b>
+	<client extraattribte="extry">one</client>
+	<client secondforone="extry">one</client>
+	<client nameasnumber="2" favoritecolor="red">two</client>
+	<client address="860 nancy st" car="station wagon">three</client>
+	<!-- the next one has no attributes - should read properly -->
+	<client>4444</client>
+</section3b>
+
+
+
+
+
+<!-- this section is for testing the STEPPING feature for reading complex elements opaquely -->
+<section4>
+<subsection>
+	<name>jim</name>
+	<age>43</age>
+</subsection>
+<subsection>
+	<name>zach</name>
+	<age>26</age>
+</subsection>
+<subsection>
+	<name>josh</name>
+	<age>23</age>
+</subsection>
+</section4>
+
+
+</data>
